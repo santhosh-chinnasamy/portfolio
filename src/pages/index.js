@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
   faGithub,
-  faMedium,
   faGoogle,
   faInstagram,
   faTwitter,
@@ -12,6 +11,7 @@ import {
 import { faShareSquare } from "@fortawesome/free-regular-svg-icons";
 import "../styles/global.scss";
 import * as info from "../data/info";
+import { Helmet } from "react-helmet";
 
 const calculateExperience = (
   startDate = new Date(),
@@ -43,6 +43,13 @@ const IndexPage = () => {
   };
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          {info.name} - {info.designation} | Profile
+        </title>
+        <link rel="canonical" href={info.website} />
+      </Helmet>
       <div class="container mx-auto my-10 sm:px-20  flex justify-center">
         <div class=" rounded-xl overflow-hidden border w-full lg:w-4/12 md:w-4/12 bg-white mx-3 md:mx-0 lg:mx-0 shadow-2xl">
           <div class="w-full flex justify-between p-3">

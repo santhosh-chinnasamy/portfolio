@@ -1,8 +1,9 @@
 module.exports = {
   name: "Santhosh Chinnasamy",
   designation: "Software Engineer",
+  website: "santhosh-chinnasamy.github.io",
   photo:
-    "https://raw.githubusercontent.com/santhosh-chinnasamy/santhosh-chinnasamy.github.io/master/_nuxt/img/c7ca470.jpg",
+    "https://raw.githubusercontent.com/santhosh-chinnasamy/santhosh-chinnasamy.github.iov2/master/_nuxt/img/c7ca470.jpg",
   startdate: "2019-06-01",
   social: {
     mail: "csesanthosh15@gmail.com",
