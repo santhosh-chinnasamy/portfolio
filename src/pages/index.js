@@ -20,8 +20,10 @@ const calculateExperience = (
   const startTime = new Date(startDate).getTime();
   const dateToCompare = new Date(dateToCalculate).getTime();
   const totalYears = (dateToCompare - startTime) / (365 * 24 * 60 * 60 * 1000);
-  const postfix = parseInt(totalYears) > 1 ? "Years" : "Year";
-  return `${Math.abs(totalYears).toFixed(1)} ${postfix} of experience`;
+  const [year, month] = Math.abs(totalYears).toFixed(1).split(".");
+  const yfix = parseInt(year) > 1 ? "Years" : "Year";
+  const mfix = parseInt(month) > 1 ? "Months" : "Month";
+  return `${year} ${yfix}, ${month} ${mfix}`;
 };
 
 const IndexPage = () => {
