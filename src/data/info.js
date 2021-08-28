@@ -3,7 +3,7 @@ module.exports = {
   designation: "Software Engineer",
   website: "santhosh-chinnasamy.github.io",
   photo:
-    "https://raw.githubusercontent.com/santhosh-chinnasamy/santhosh-chinnasamy.github.iov2/master/_nuxt/img/c7ca470.jpg",
+    "https://res.cloudinary.com/santhosh-chinnasamy/image/upload/v1630117719/personal/santhosh.jpg",
   startdate: "2019-06-01",
   social: {
     mail: "csesanthosh15@gmail.com",
