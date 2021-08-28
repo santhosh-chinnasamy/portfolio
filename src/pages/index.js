@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,
   faGithub,
-  faGoogle,
+  // faGoogle,
   faInstagram,
   faTwitter,
   faChrome,
 } from "@fortawesome/free-brands-svg-icons";
-import { faShareSquare } from "@fortawesome/free-regular-svg-icons";
+import { faShareSquare, faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import "../styles/global.scss";
 import * as info from "../data/info";
 import { Helmet } from "react-helmet";
@@ -76,7 +76,7 @@ const IndexPage = () => {
                 rel="noreferrer"
               >
                 <i className="p-2 cursor-pointer text-xl text-purple-700">
-                  <FontAwesomeIcon icon={faGoogle} />
+                  <FontAwesomeIcon icon={faEnvelope} />
                 </i>
               </a>
               <a href={info.social.linkedin} target="_blank" rel="noreferrer">

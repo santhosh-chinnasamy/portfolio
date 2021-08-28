@@ -12,7 +12,26 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
+        name: `Santhosh C`,
+        short_name: `Santhosh Profile`,
+        description: `Software Engineer`,
+        start_url: `/`,
+        background_color: `#0a68f0`,
+        theme_color: `#0a68f0`,
+        display: `standalone`,
         icon: "src/images/favicon.png",
+        icons: [
+          {
+            src: `src/images/favicon.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `src/images/favicon.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
       },
     },
     "gatsby-plugin-sharp",
@@ -50,5 +69,6 @@ module.exports = {
         },
       },
     },
+    "gatsby-plugin-offline",
   ],
 };
