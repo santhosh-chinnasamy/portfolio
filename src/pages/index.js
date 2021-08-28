@@ -89,12 +89,12 @@ const IndexPage = () => {
                   <FontAwesomeIcon icon={faGithub} />
                 </i>
               </a>
-              <a href={info.social.twitter} target="_blank" rel="noreferrer">
+              <a href={info.social.blog} target="_blank" rel="noreferrer">
                 <i className="p-2 cursor-pointer text-xl text-purple-700">
                   <FontAwesomeIcon icon={faChrome} />
                 </i>
               </a>
-              <a href={info.social.blog} target="_blank" rel="noreferrer">
+              <a href={info.social.twitter} target="_blank" rel="noreferrer">
                 <i className="p-2 cursor-pointer text-xl text-purple-700">
                   <FontAwesomeIcon icon={faTwitter} />
                 </i>
