@@ -70,14 +70,14 @@ module.exports = {
       },
     },
     "gatsby-plugin-offline",
-    {
-      resolve: `gatsby-plugin-chatwoot`,
-      options: {
-        baseUrl: "https://app.chatwoot.com", // Required
-        websiteToken: "sDoQCAaVY9UXdpbgPp8cGjEm", // Required
-        includeInDevelopment: false, // Optional
-        chatwootSettings: {}, // Optional
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-chatwoot`,
+    //   options: {
+    //     baseUrl: "https://app.chatwoot.com", // Required
+    //     websiteToken: "sDoQCAaVY9UXdpbgPp8cGjEm", // Required
+    //     includeInDevelopment: false, // Optional
+    //     chatwootSettings: {}, // Optional
+    //   },
+    // },
   ],
 };
