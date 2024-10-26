@@ -1,17 +1,17 @@
-import * as React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faLinkedin,
   faGithub,
-  // faGoogle,
   faInstagram,
+  faLinkedin,
+  faStackOverflow,
   faTwitter,
-  faChrome,
+  faWordpress,
 } from "@fortawesome/free-brands-svg-icons";
-import { faShareSquare, faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import "../styles/global.scss";
-import * as info from "../data/info";
+import { faEnvelope, faShareSquare } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as React from "react";
 import { Helmet } from "react-helmet";
+import * as info from "../data/info";
+import "../styles/global.scss";
 
 const calculateExperience = (
   startDate = new Date(),
@@ -21,13 +21,13 @@ const calculateExperience = (
   const dateToCompare = new Date(dateToCalculate).getTime();
   const totalYears = (dateToCompare - startTime) / (365 * 24 * 60 * 60 * 1000);
   const [year, month] = Math.abs(totalYears).toFixed(1).split(".");
-  const yfix = parseInt(year) > 1 ? "Years" : "Year";
-  const mfix = parseInt(month) > 1 ? "Months" : "Month";
-  return `${year} ${yfix}, ${month} ${mfix}`;
+  const yearSuffix = parseInt(year) > 1 ? "Years" : "Year";
+  const monthSuffix = parseInt(month) > 1 ? "Months" : "Month";
+  return `${year} ${yearSuffix}, ${month} ${monthSuffix}`;
 };
 
 const IndexPage = () => {
-  const handleOnClick = () => {
+  const handleShare = () => {
     if (navigator.share) {
       navigator
         .share({
@@ -39,7 +39,7 @@ const IndexPage = () => {
           console.log("Successfully shared");
         })
         .catch((error) => {
-          console.error("Something went wrong sharing the blog", error);
+          console.error("Something went wrong sharing the profile", error);
         });
     }
   };
@@ -72,9 +72,9 @@ const IndexPage = () => {
           <div className="w-full flex justify-between p-3">
             <div className="flex">
               <div className="rounded-full h-10 w-10 bg-gray-500 flex items-center justify-center overflow-hidden">
-                <img src={info.photo} alt="profilepic" />
+                <img src={info.photo} alt={info.name} />
               </div>
-              <span className="pt-1 ml-2 font-bold text-purple-700 text-sm">
+              <span className="pt-1 ml-2 font-bold text-gray-700 text-sm">
                 {info.name}
                 <p className="font-normal text-gray-500 text-sm">
                   {info.designation}, {calculateExperience(info.startdate)}
@@ -89,49 +89,88 @@ const IndexPage = () => {
                 href={`mailto:${info.social.mail}`}
                 target="_blank"
                 rel="noreferrer"
+                title="email"
               >
-                <i className="p-2 cursor-pointer text-xl text-purple-700">
+                <i className="p-2 cursor-pointer text-xl text-gray-700">
                   <FontAwesomeIcon icon={faEnvelope} />
                 </i>
               </a>
-              <a href={info.social.linkedin} target="_blank" rel="noreferrer">
-                <i className="p-2 cursor-pointer text-xl text-purple-700">
+              <a
+                href={info.social.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                title="LinkedIn"
+              >
+                <i className="p-2 cursor-pointer text-xl text-gray-700">
                   <FontAwesomeIcon icon={faLinkedin} />
                 </i>
               </a>
-              <a href={info.social.github} target="_blank" rel="noreferrer">
-                <i className="p-2 cursor-pointer text-xl text-purple-700">
+              <a
+                href={info.social.github}
+                target="_blank"
+                rel="noreferrer"
+                title="Github"
+              >
+                <i className="p-2 cursor-pointer text-xl text-gray-700">
                   <FontAwesomeIcon icon={faGithub} />
                 </i>
               </a>
-              <a href={info.social.blog} target="_blank" rel="noreferrer">
-                <i className="p-2 cursor-pointer text-xl text-purple-700">
-                  <FontAwesomeIcon icon={faChrome} />
+              <a
+                href={info.social.stackoverflow}
+                target="_blank"
+                rel="noreferrer"
+                title="Stack Overflow"
+              >
+                <i className="p-2 cursor-pointer text-xl text-gray-700">
+                  <FontAwesomeIcon icon={faStackOverflow} />
                 </i>
               </a>
-              <a href={info.social.twitter} target="_blank" rel="noreferrer">
-                <i className="p-2 cursor-pointer text-xl text-purple-700">
+              <a
+                href={info.social.blog}
+                target="_blank"
+                rel="noreferrer"
+                title="Bleedbytes Blog"
+              >
+                <i className="p-2 cursor-pointer text-xl text-gray-700">
+                  <FontAwesomeIcon icon={faWordpress} />
+                </i>
+              </a>
+              <a
+                href={info.social.twitter}
+                target="_blank"
+                rel="noreferrer"
+                title="Twitter"
+              >
+                <i className="p-2 cursor-pointer text-xl text-gray-700">
                   <FontAwesomeIcon icon={faTwitter} />
                 </i>
               </a>
-              <a href={info.social.instagram} target="_blank" rel="noreferrer">
-                <i className="p-2 cursor-pointer text-xl text-purple-700">
+              <a
+                href={info.social.instagram}
+                target="_blank"
+                rel="noreferrer"
+                title="Instagram"
+              >
+                <i className="p-2 cursor-pointer text-xl text-gray-700">
                   <FontAwesomeIcon icon={faInstagram} />
                 </i>
               </a>
 
-              <button className="float-right" onClick={handleOnClick}>
-                <i className="p-2 cursor-pointer text-xl text-purple-700">
+              <button
+                className="float-right"
+                onClick={handleShare}
+                title="Share"
+              >
+                <i className="p-2 cursor-pointer text-xl text-gray-700">
                   <FontAwesomeIcon icon={faShareSquare} />
                 </i>
               </button>
             </div>
             <div className="pt-1">
               <div className="mb-2 text-sm">
-                {/* <span className="font-medium mr-2">{info.name}</span> */}
-                {info.stack.map((t, i) => (
+                {info.skills.map((skill, i) => (
                   <span className="text-sm text-blue-700 font-medium" key={i}>
-                    #{t}{" "}
+                    #{skill}{" "}
                   </span>
                 ))}
               </div>
