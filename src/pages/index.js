@@ -51,6 +51,21 @@ const IndexPage = () => {
           {info.name} - {info.designation} | Profile
         </title>
         <link rel="canonical" href={info.website} />
+        <script
+          src="https://topmate-embed.s3.ap-south-1.amazonaws.com/v1/topmate-embed.js"
+          user-profile="https://topmate.io/embed/profile/santhoshc?theme=e3e3e3"
+          btn-style='{"backgroundColor":"#000","color":"#fff","border":"1px solid #000"}'
+          embed-version="v1"
+          button-text="Schedule Appointment"
+          position-right="30px"
+          position-bottom="30px"
+          custom-padding="0px"
+          custom-font-size="16px"
+          custom-font-weight="500"
+          custom-width="200px"
+          async="true"
+          defer=""
+        ></script>
       </Helmet>
       <div className="container mx-auto my-10 sm:px-20  flex justify-center">
         <div className=" rounded-xl overflow-hidden border w-full lg:w-4/12 md:w-4/12 bg-white mx-3 md:mx-0 lg:mx-0 shadow-2xl">
